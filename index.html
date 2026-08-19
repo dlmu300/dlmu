@@ -1,0 +1,114 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
+<title>我的民大校友E卡_大连民族大学（DMU）</title>
+</head>
+
+<body>
+<div align="center"><img src="校园卡.jpg" width="1216" height="2420" />
+</div>
+<title>动态时钟日期</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            background-color: #ffffff;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+            font-family: "PingFang SC", "Microsoft YaHei", sans-serif;
+        }
+        .time-wrap {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+        }
+        .time-item {
+            width: 140px;
+            height: 160px;
+            border: 3px solid #102060;
+            border-radius: 32px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .time-item span {
+            font-size: 96px;
+            font-weight: 600;
+            color: #102060;
+        }
+        .dot-sep {
+            display: flex;
+            flex-direction: column;
+            gap: 18px;
+        }
+        .dot {
+            width: 14px;
+            height: 14px;
+            background-color: #102060;
+            border-radius: 50%;
+        }
+        .date-text {
+            margin-top: 40px;
+            font-size: 72px;
+            color: #102060;
+            font-weight: 500;
+        }
+    </style>
+</head>
+<body>
+    <div class="time-wrap">
+        <div class="time-item"><span id="h1">0</span></div>
+        <div class="time-item"><span id="h2">0</span></div>
+
+        <div class="dot-sep">
+            <div class="dot"></div>
+            <div class="dot"></div>
+        </div>
+
+        <div class="time-item"><span id="m1">0</span></div>
+        <div class="time-item"><span id="m2">0</span></div>
+
+        <div class="dot-sep">
+            <div class="dot"></div>
+            <div class="dot"></div>
+        </div>
+
+        <div class="time-item"><span id="s1">0</span></div>
+        <div class="time-item"><span id="s2">0</span></div>
+    </div>
+
+    <div class="date-text" id="dateStr">2026/08/19</div>
+
+    <script>
+        function padZero(n) {
+            return n.toString().padStart(2, '0');
+        }
+        function refreshClock() {
+            const now = new Date();
+            const hh = padZero(now.getHours());
+            const mm = padZero(now.getMinutes());
+            const ss = padZero(now.getSeconds());
+            const y = now.getFullYear();
+            const mo = padZero(now.getMonth() + 1);
+            const d = padZero(now.getDate());
+
+            document.getElementById('h1').innerText = hh[0];
+            document.getElementById('h2').innerText = hh[1];
+            document.getElementById('m1').innerText = mm[0];
+            document.getElementById('m2').innerText = mm[1];
+            document.getElementById('s1').innerText = ss[0];
+            document.getElementById('s2').innerText = ss[1];
+            document.getElementById('dateStr').innerText = `${y}/${mo}/${d}`;
+        }
+        refreshClock();
+        setInterval(refreshClock, 1000);
+    </script>
+</body>
+</html>
