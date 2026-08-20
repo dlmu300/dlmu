@@ -1,15 +1,78 @@
-Ôªø<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
-<title>ÊàëÁöÑÊ∞ëÂ§ßÊ†°ÂèãEÂç°_Â§ßËøûÊ∞ëÊóèÂ§ßÂ≠¶ÔºàDMUÔºâ</title>
+<title>Œ“µƒ√Ò¥Û–£”—Eø®_¥Û¡¨√Ò◊Â¥Û—ß£®DMU£©</title>
 </head>
 
 <body>
-<div align="center"><img src="wy.jpg" width="990" height="1990" />
-</div>
-<title>Âä®ÊÄÅÊó∂ÈíüÊó•Êúü</title>
-    <style>
+<div align="center">
+  <table width="990" height="1970" border="0" align="center" background="wy.jpg">
+    <tr align="center">
+      <td width="990" height="1130">&nbsp;</td>
+    </tr>
+    <tr align="center">
+      <td width="990" height="200" align="center"><table width="800" height="200" border="0">
+        <tr>
+          <td><div align="center">
+            <div align="center">
+              <div class="time-wrap">
+                <div class="time-item">
+                  <div align="center"><span id="h1">0</span></div>
+                </div>
+                <div class="time-item">
+                  <div align="center"><span id="h2">0</span></div>
+                </div>
+                <div class="dot-sep">
+                  <div class="dot"></div>
+                  <div class="dot"></div>
+                </div>
+                <div class="time-item">
+                  <div align="center"><span id="m1">0</span></div>
+                </div>
+                <div class="time-item">
+                  <div align="center"><span id="m2">0</span></div>
+                </div>
+                <div class="dot-sep">
+                  <div class="dot"></div>
+                  <div class="dot"></div>
+                </div>
+                <div class="time-item">
+                  <div align="center"><span id="s1">0</span></div>
+                </div>
+                <div class="time-item">
+                  <div align="center"><span id="s2">0</span></div>
+                </div>
+              </div>
+              <div class="date-text" id="dateStr"> </div>
+              <div align="center">
+                <script>
+        function padZero(n) {
+            return n.toString().padStart(2, '0');
+        }
+        function refreshClock() {
+            const now = new Date();
+            const hh = padZero(now.getHours());
+            const mm = padZero(now.getMinutes());
+            const ss = padZero(now.getSeconds());
+            const y = now.getFullYear();
+            const mo = padZero(now.getMonth() + 1);
+            const d = padZero(now.getDate());
+
+            document.getElementById('h1').innerText = hh[0];
+            document.getElementById('h2').innerText = hh[1];
+            document.getElementById('m1').innerText = mm[0];
+            document.getElementById('m2').innerText = mm[1];
+            document.getElementById('s1').innerText = ss[0];
+            document.getElementById('s2').innerText = ss[1];
+            document.getElementById('dateStr').innerText = `${y}/${mo}/${d}`;
+        }
+        refreshClock();
+        setInterval(refreshClock, 1000);
+            </script>
+              </div>
+              <title> ∂ØÃ¨ ±÷”»’∆⁄ </title>
+              <style>
         * {
             margin: 0;
             padding: 0;
@@ -60,55 +123,20 @@
             color: #102060;
             font-weight: 400;
         }
-    </style>
+            </style>
+            </div>
+          </div></td>
+        </tr>
+      </table></td>
+    </tr>
+    <tr align="center">
+      <td height="640">&nbsp;</td>
+    </tr>
+  </table>
+</div>
+
 </head>
 <body>
-    <div class="time-wrap">
-        <div class="time-item"><span id="h1">0</span></div>
-        <div class="time-item"><span id="h2">0</span></div>
 
-        <div class="dot-sep">
-            <div class="dot"></div>
-            <div class="dot"></div>
-        </div>
-
-        <div class="time-item"><span id="m1">0</span></div>
-        <div class="time-item"><span id="m2">0</span></div>
-
-        <div class="dot-sep">
-            <div class="dot"></div>
-            <div class="dot"></div>
-        </div>
-
-        <div class="time-item"><span id="s1">0</span></div>
-        <div class="time-item"><span id="s2">0</span></div>
-    </div>
-
-    <div class="date-text" id="dateStr">2026/08/19</div>
-
-    <script>
-        function padZero(n) {
-            return n.toString().padStart(2, '0');
-        }
-        function refreshClock() {
-            const now = new Date();
-            const hh = padZero(now.getHours());
-            const mm = padZero(now.getMinutes());
-            const ss = padZero(now.getSeconds());
-            const y = now.getFullYear();
-            const mo = padZero(now.getMonth() + 1);
-            const d = padZero(now.getDate());
-
-            document.getElementById('h1').innerText = hh[0];
-            document.getElementById('h2').innerText = hh[1];
-            document.getElementById('m1').innerText = mm[0];
-            document.getElementById('m2').innerText = mm[1];
-            document.getElementById('s1').innerText = ss[0];
-            document.getElementById('s2').innerText = ss[1];
-            document.getElementById('dateStr').innerText = `${y}/${mo}/${d}`;
-        }
-        refreshClock();
-        setInterval(refreshClock, 1000);
-    </script>
 </body>
 </html>
